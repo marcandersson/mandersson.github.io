@@ -52,6 +52,10 @@ class Nav {
 			e.preventDefault();
 		}, { passive: false });
 
+		document.addEventListener('touchforcechange', function(e) {
+			e.preventDefault();
+		}, { passive: false });
+
 		var hammertime = new Hammer(document.querySelector('body'));
 		
 		hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
