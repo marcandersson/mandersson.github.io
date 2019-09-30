@@ -56,11 +56,11 @@ class Nav {
 			e.preventDefault();
 		}, { passive: false });*/
 
-		var hammertime = new Hammer(document.querySelector('body'));
+		var hammertime = new Hammer(document.querySelector('html'));
 		
-		hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+		hammertime.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
-		hammertime.on("swipe", this.scrollInverted.bind(this));
+		hammertime.on("pan", this.scrollInverted.bind(this));
 
 		return true;
 	}
