@@ -48,13 +48,13 @@ class Nav {
 
 		// Mobile Scroll
 
-		document.addEventListener('touchmove', function(e) {
+		/*document.addEventListener('touchmove', function(e) {
 			e.preventDefault();
 		}, { passive: false });
 
 		document.addEventListener('touchforcechange', function(e) {
 			e.preventDefault();
-		}, { passive: false });
+		}, { passive: false });*/
 
 		var hammertime = new Hammer(document.querySelector('body'));
 		
