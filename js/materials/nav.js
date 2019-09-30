@@ -129,6 +129,8 @@ class Nav {
 
 	scrollInverted (event) {
 			
+		event.preventDefault();
+
 		if (this.scrollEnabled) {
 
 			if (document.querySelector('.page[state="ready"] .slide[state="active"]')) {
