@@ -48,6 +48,10 @@ class Nav {
 
 		// Mobile Scroll
 
+		document.addEventListener('touchmove', function(e) {
+			e.preventDefault();
+		}, { passive: false });
+
 		var hammertime = new Hammer(document.querySelector('body'));
 		
 		hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
@@ -128,8 +132,6 @@ class Nav {
 	}
 
 	scrollInverted (event) {
-			
-		event.preventDefault();
 
 		if (this.scrollEnabled) {
 
