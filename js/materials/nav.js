@@ -5,12 +5,17 @@ class Nav {
 
 	constructor () {
 
+		// Mobile scroll
+
+		var hammertime = new Hammer(document.querySelector('main'));
+		
+		hammertime.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
+
+		hammertime.on("pan", this.scrollInverted.bind(this));
+
 		// Responsive Menu Button
 
 		document.querySelector('.menu_button').addEventListener('click', this.menuResponsiveActive);
-		document.querySelector('main').addEventListener('click',function(){
-			alert('yey');
-		});
 
 		// Menu
 
@@ -57,14 +62,6 @@ class Nav {
 		else if (document.addEventListener) {
 			document.addEventListener(mousewheelevt, this.scroll.bind(this), false);
 		}
-
-		// Mobile Scroll
-
-		var hammertime = new Hammer(document.querySelector('html'));
-		
-		hammertime.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
-
-		hammertime.on("pan", this.scrollInverted.bind(this));
 
 		return true;
 	}
