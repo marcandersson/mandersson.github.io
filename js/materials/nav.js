@@ -44,7 +44,12 @@ class Nav {
 
 		this.scrollEnabled = true;
 
-		document.querySelector('body').addEventListener('mousewheel', this.scroll.bind(this));
+		var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+ 
+		if (document.attachEvent) //if IE (and Opera depending on user setting)
+			document.attachEvent("on"+mousewheelevt, this.scroll.bind(this))
+		else if (document.addEventListener) //WC3 browsers
+			document.addEventListener(mousewheelevt, this.scroll.bind(this), false)
 
 		// Mobile Scroll
 
@@ -116,16 +121,20 @@ class Nav {
 	}
 
 	scroll (event) {
-			
+
+		var delta = event.deltaY;
+
+		if (typeof delta == 'undefined') delta = event.wheelDelta ? event.wheelDelta : event.detail;
+
 		if (this.scrollEnabled) {
 
 			if (document.querySelector('.page[state="ready"] .slide[state="active"]')) {
 
-				if (event.deltaY > 0) {
-					Page.scrollDown(this, event);
+				if (delta > 0) {
+					Page.scrollDown(this, delta);
 				}
-				else if (event.deltaY < 0) {
-					Page.scrollUp(this, event);
+				else if (delta < 0) {
+					Page.scrollUp(this, delta);
 				}
 
 			}
@@ -137,15 +146,19 @@ class Nav {
 
 	scrollInverted (event) {
 
+		var delta = event.deltaY;
+
+		if (typeof delta == 'undefined') delta = event.wheelDelta ? event.wheelDelta : event.detail;
+
 		if (this.scrollEnabled) {
 
 			if (document.querySelector('.page[state="ready"] .slide[state="active"]')) {
 
-				if (event.deltaY > 0) {
-					Page.scrollUp(this, event);
+				if (delta > 0) {
+					Page.scrollUp(this, delta);
 				}
-				else if (event.deltaY < 0) {
-					Page.scrollDown(this, event);
+				else if (delta < 0) {
+					Page.scrollDown(this, delta);
 				}
 
 			}

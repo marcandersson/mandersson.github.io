@@ -58,7 +58,7 @@ class Page {
 
 	}
 
-	static scrollDown (nav, event) {
+	static scrollDown (nav, delta) {
 
 		var slide = document.querySelector('.page .slide[state="active"]');
 		var slideNext = slide.nextElementSibling;
@@ -84,7 +84,7 @@ class Page {
 
 				delay = 600;
 					
-				if (event.deltaY != 100 && window.innerWidth > 1365) delay = 2000;
+				if (delta > 100 && window.innerWidth > 1365) delay = 2000;
 
 				setTimeout(function() {
 					nav.scrollEnabled = true;
@@ -97,7 +97,7 @@ class Page {
 		return true;
 	}
 
-	static scrollUp (nav, event) {
+	static scrollUp (nav, delta) {
 
 		var slide = document.querySelector('.page .slide[state="active"]');
 		var slidePrev = slide.previousElementSibling;
@@ -124,7 +124,7 @@ class Page {
 
 					delay = 600;
 					
-					if (event.deltaY != -100 && window.innerWidth > 1365) delay = 2000;
+					if (delta < -100 && window.innerWidth > 1365) delay = 2000;
 
 					setTimeout(function() {
 						nav.scrollEnabled = true;
