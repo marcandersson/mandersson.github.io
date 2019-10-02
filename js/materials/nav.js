@@ -146,7 +146,7 @@ class Nav {
 
 		if (typeof delta == 'undefined') delta = event.wheelDelta ? event.wheelDelta : event.detail;
 
-		alert(delta);
+		alert(delta + ' - ' + this.scrollEnabled);
 
 		if (this.scrollEnabled) {
 
