@@ -148,6 +148,8 @@ class Nav {
 
 		if (this.scrollEnabled) {
 
+			alert(delta);
+
 			if (document.querySelector('.page[state="ready"] .slide[state="active"]')) {
 
 				if (delta > 0) {
