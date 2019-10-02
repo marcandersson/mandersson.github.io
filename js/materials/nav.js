@@ -7,6 +7,8 @@ class Nav {
 
 		// Mobile scroll
 
+		this.scrollEnabled = true;
+
 		var hammertime = new Hammer(document.querySelector('main'));
 		
 		hammertime.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
@@ -49,8 +51,6 @@ class Nav {
 		}
 
 		// Scroll
-
-		this.scrollEnabled = true;
 
 		var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel"; //FF doesn't recognize mousewheel as of FF3.x
  
