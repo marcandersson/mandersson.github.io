@@ -7,7 +7,7 @@ class Nav {
 
 		// Responsive Menu Button
 
-		document.querySelector('.menu_button').addEventListener('click', this.menuResponsiveActive)
+		document.querySelector('.menu_button').addEventListener('click', this.menuResponsiveActive);
 
 		// Menu
 
@@ -52,14 +52,6 @@ class Nav {
 			document.addEventListener(mousewheelevt, this.scroll.bind(this), false)
 
 		// Mobile Scroll
-
-		document.querySelector('.column.page').addEventListener('click', function(event) {
-			alert('yey');
-		});
-
-		/*document.addEventListener('touchforcechange', function(e) {
-			e.preventDefault();
-		}, { passive: false });*/
 
 		var hammertime = new Hammer(document.querySelector('html'));
 		
