@@ -3,6 +3,7 @@
 * {
 	box-sizing: border-box;
 	font-family: 'Oswald', sans-serif;
+	touch-action: manipulation;
 }
 
 body,
