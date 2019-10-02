@@ -33,7 +33,8 @@
 	animation: fadeupout 500ms ease-out 500ms forwards;
 }
 
-.loader span:nth-child(2) {
+.loader span:nth-child(2),
+.loader span:nth-child(3) {
 	animation: fadein 1s ease-out 1s forwards;
     color: rgba(255,247,140,1);
 	display: block;
@@ -44,8 +45,13 @@
     margin-top: 30px;
 }
 
-.loader[state="ready"] span:nth-child(2) {
+.loader[state="ready"] span:nth-child(2),
+.loader[state="ready"] span:nth-child(3) {
 	animation: fadeoutblur 500ms ease-out forwards;
+}
+
+.loader span:nth-child(3) {
+	display: none;
 }
 
 @media screen and (max-width: 560px) {
@@ -64,4 +70,19 @@
 		margin-top: 5px;
 	}
 
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+ 
+	.loader span:nth-child(1),
+	.loader span:nth-child(2) {
+		display: none;
+	}
+
+	.loader span:nth-child(3) {
+		display: block;
+		text-align: center;
+		transform: translateY(-50%);
+	}
+	
 }
