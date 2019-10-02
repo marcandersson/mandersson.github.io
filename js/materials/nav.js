@@ -56,11 +56,7 @@ class Nav {
 			e.preventDefault();
 		}, { passive: false });*/
 
-		document.querySelector('.slide').addEventListener('click', function(){
-			alert('hej');
-		});
-
-		var hammertime = new Hammer(document.querySelector('body'));
+		var hammertime = new Hammer(document.querySelector('html'));
 		
 		hammertime.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
@@ -140,8 +136,6 @@ class Nav {
 	}
 
 	scrollInverted (event) {
-
-		alert('hej');
 
 		if (this.scrollEnabled) {
 
