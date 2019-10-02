@@ -56,7 +56,7 @@ class Nav {
 			e.preventDefault();
 		}, { passive: false });*/
 
-		var hammertime = new Hammer(document.querySelector('html'));
+		var hammertime = new Hammer(document.querySelector('body'));
 		
 		hammertime.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
