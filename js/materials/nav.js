@@ -146,9 +146,9 @@ class Nav {
 
 		if (typeof delta == 'undefined') delta = event.wheelDelta ? event.wheelDelta : event.detail;
 
-		if (this.scrollEnabled) {
+		alert(delta);
 
-			alert(delta);
+		if (this.scrollEnabled) {
 
 			if (document.querySelector('.page[state="ready"] .slide[state="active"]')) {
 
