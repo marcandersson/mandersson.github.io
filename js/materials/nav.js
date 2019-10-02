@@ -53,7 +53,7 @@ class Nav {
 
 		// Mobile Scroll
 
-		document.querySelector('html').addEventListener('click', function(event) {
+		document.querySelector('.column.page').addEventListener('click', function(event) {
 			alert('yey');
 		});
 
