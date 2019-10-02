@@ -146,6 +146,8 @@ class Nav {
 
 	scrollInverted (event) {
 
+		alert('triggered');
+
 		var delta = event.deltaY;
 
 		if (typeof delta == 'undefined') delta = event.wheelDelta ? event.wheelDelta : event.detail;
