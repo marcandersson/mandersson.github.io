@@ -53,11 +53,11 @@ class Nav {
 
 		// Mobile Scroll
 
-		/*document.addEventListener('touchmove', function(e) {
-			e.preventDefault();
+		document.addEventListener('touchmove', function(e) {
+			alert('yey');
 		}, { passive: false });
 
-		document.addEventListener('touchforcechange', function(e) {
+		/*document.addEventListener('touchforcechange', function(e) {
 			e.preventDefault();
 		}, { passive: false });*/
 
