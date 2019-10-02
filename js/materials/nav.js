@@ -56,6 +56,10 @@ class Nav {
 			e.preventDefault();
 		}, { passive: false });*/
 
+		document.querySelector('body').addEventListener('click', function(){
+			alert('hej');
+		});
+
 		var hammertime = new Hammer(document.querySelector('body'));
 		
 		hammertime.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
