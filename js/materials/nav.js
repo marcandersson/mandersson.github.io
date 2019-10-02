@@ -9,7 +9,7 @@ class Nav {
 
 		document.querySelector('.menu_button').addEventListener('click', this.menuResponsiveActive);
 		document.querySelector('main').addEventListener('click',function(){
-			document.querySelector('main').innerHTML = '';
+			alert('yey');
 		});
 
 		// Menu
@@ -47,12 +47,16 @@ class Nav {
 
 		this.scrollEnabled = true;
 
-		var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+		var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel"; //FF doesn't recognize mousewheel as of FF3.x
  
-		if (document.attachEvent) //if IE (and Opera depending on user setting)
-			document.attachEvent("on"+mousewheelevt, this.scroll.bind(this))
-		else if (document.addEventListener) //WC3 browsers
-			document.addEventListener(mousewheelevt, this.scroll.bind(this), false)
+		//if IE (and Opera depending on user setting)
+		if (document.attachEvent) {
+			document.attachEvent("on"+mousewheelevt, this.scroll.bind(this));
+		}
+		//WC3 browsers
+		else if (document.addEventListener) {
+			document.addEventListener(mousewheelevt, this.scroll.bind(this), false);
+		}
 
 		// Mobile Scroll
 
