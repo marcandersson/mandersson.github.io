@@ -56,7 +56,7 @@ class Nav {
 			e.preventDefault();
 		}, { passive: false });*/
 
-		document.querySelector('main').addEventListener('click', function(){
+		document.querySelector('html').addEventListener('touchmove', function(){
 			alert('hej');
 		});
 
