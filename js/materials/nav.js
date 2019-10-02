@@ -8,6 +8,9 @@ class Nav {
 		// Responsive Menu Button
 
 		document.querySelector('.menu_button').addEventListener('click', this.menuResponsiveActive);
+		document.querySelector('main').addEventListener('click',function(){
+			document.querySelector('main').innerHTML = '';
+		});
 
 		// Menu
 
